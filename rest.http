@@ -1,0 +1,91 @@
+@hostname = localhost
+@port = 8000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+@createdAt = {{$datetime iso8601}}
+@modifiedBy = {{$processEnv USERNAME}}
+
+
+
+###
+# @name homepage
+GET http://{{host}} HTTP/1.1
+
+
+###
+# @name get_all_items
+GET http://{{host}}/items HTTP/1.1
+
+
+###
+# @name get_items_by_id
+GET http://{{host}}/items/3 HTTP/1.1
+
+
+###
+# @name get_items_by_id_invalid_type
+GET http://{{host}}/items/a HTTP/1.1
+
+
+###
+# @name get_items_by_name
+GET http://{{host}}/items/name=user2 HTTP/1.1
+
+###
+# @name get_items_by_name
+GET http://{{host}}/items/name=user1 HTTP/1.1
+
+###
+# @name create_item
+POST http://{{host}}/items HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "user1",
+  "price": 100,
+  "is_offer": false
+}
+
+
+###
+# @name create_item
+POST http://{{host}}/items HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "user2",
+  "price": 200,
+  "is_offer": true
+}
+
+
+###
+# @name create_item
+POST http://{{host}}/items HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "user1",
+  "price": "300"
+}
+
+###
+# @name create_item_invalid_price_type
+POST http://{{host}}/items HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "user1",
+  "price": "a",
+  "is_offer": true
+}
+
+###
+# @name create_item_invalid_len_name
+POST http://{{host}}/items HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "u1",
+  "price": 200.00
+}
