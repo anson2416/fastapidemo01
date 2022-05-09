@@ -6,7 +6,6 @@
 @modifiedBy = {{$processEnv USERNAME}}
 
 
-
 ###
 # @name homepage
 GET http://{{host}} HTTP/1.1
