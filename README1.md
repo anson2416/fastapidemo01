@@ -27,6 +27,6 @@ This repo follows the guideline below to learn how to use FastAPI.
     ```
 
 
-1. Run the app via command
+4. Run the app via command
 
     `uvicorn app.main:app --reload`
