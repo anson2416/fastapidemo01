@@ -7,20 +7,26 @@ This repo follows the guideline below to learn how to use FastAPI.
 # How to run the code 
 
 1. Download the repo
-2. Install the package in your local environment
+2. Create & activate virtual environment
+   ```
+    python -m venv .venv
+    .venv\Scripts\activate.bat     #windowns cmd
+    source .venv/scripts/activate  #gitbash
+   ```
+3. Install the package in your local environment
 
-```
-pip install fastapi
-pip install uvicorn[standard]
-```
+   ```
+   pip install fastapi
+   pip install uvicorn[standard]
+   ```
 
 **OR**
 
-```
-pip install -r requirements.txt
-```
+    ```
+    pip install -r requirements.txt
+    ```
 
 
-3. Run the app via command
+1. Run the app via command
 
 `uvicorn app.main:app --reload`
