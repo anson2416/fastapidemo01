@@ -20,7 +20,7 @@ This repo follows the guideline below to learn how to use FastAPI.
    pip install uvicorn[standard]
    ```
 
-**OR**
+   **OR**
 
     ```
     pip install -r requirements.txt
@@ -29,4 +29,4 @@ This repo follows the guideline below to learn how to use FastAPI.
 
 1. Run the app via command
 
-`uvicorn app.main:app --reload`
+    `uvicorn app.main:app --reload`
